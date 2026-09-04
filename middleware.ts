@@ -4,15 +4,21 @@ import type { NextRequest } from 'next/server'
 const WORDPRESS_ORIGIN = https://kisiselgelisimforum.com
 const FACEBOOK_REFERER = /^https?:\/\/(?:[a-z0-9-]+\.)*facebook\.com\//i
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl
 
-  if (pathname === '/') return NextResponse.next()
+  if (pathname === '/') {
+    return NextResponse.next()
+  }
 
   const referer = request.headers.get('referer') ?? ''
-  if (!FACEBOOK_REFERER.test(referer)) return NextResponse.next()
+
+  if (!FACEBOOK_REFERER.test(referer)) {
+    return NextResponse.next()
+  }
 
   const { device } = userAgent(request)
+
   if (device.type !== 'mobile' && device.type !== 'tablet') {
     return NextResponse.next()
   }
