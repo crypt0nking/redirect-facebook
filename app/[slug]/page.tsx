@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 export const dynamic = 'force-dynamic'
 
 function getWordPressOrigin() {
-  return process.env.WORDPRESS_ORIGIN || 'https://orveb.com'
+  return process.env.WORDPRESS_ORIGIN || 'https://kisiselgelisimforum.com'
 }
 
 type PostMeta = {
