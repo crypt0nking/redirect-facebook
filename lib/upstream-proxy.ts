@@ -1,5 +1,5 @@
 const WORDPRESS_ORIGIN =
-  process.env.WORDPRESS_ORIGIN || 'https://orveb.com'
+  process.env.WORDPRESS_ORIGIN || 'https://kisiselgelisimforum.com'
 
 const PASSTHROUGH_HEADERS = [
   'content-type',
