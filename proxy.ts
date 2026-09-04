@@ -1,7 +1,7 @@
 import { NextResponse, userAgent } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const WORDPRESS_ORIGIN = 'https://kisiselgelisimforum.com'
+const WORDPRESS_ORIGIN = 'https://orveb.com'
 const FACEBOOK_REFERER = /^https?:\/\/(?:[a-z0-9-]+\.)*facebook\.com\//i
 
 export function proxy(request: NextRequest) {
